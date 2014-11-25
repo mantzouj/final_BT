@@ -1,0 +1,65 @@
+INIT 32 16
+LOOKUP 7wqcpd7cjlq7fwasvmp0bv1g14kkbv67  # should fail
+LOOKUP ztqen1uoxetgn8ib0cr9owa3kwnhyv0h  # should fail
+UPDATE 42stlatinxsidcowo775lafc2uzgup1k r2jflct2sg7zl1ot  # should fail
+LOOKUP qt5xh1ev6nvzdfygo7hlihnn9ib22aqo  # should fail
+DISPLAY  # should always succeed
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg fs5lhen2avphdro8  # should succeed
+UPDATE b2sjew4zlws5md0trr25pxflxusniw34 bs06f3qxwkr8ck98  # should fail
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg cuu3wfkbol9ntysz  # should succeed
+UPDATE jrky7co99gtxw0zmykxilt6timuxypse rwwqfa31x9oy71q0  # should fail
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg hvqhnm4yqyl8gwa0  # should succeed
+LOOKUP chg30bk92ej1fza87x4ar9navg8xdscd  # should fail
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg femywuvib7pouliy  # should succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg unz8d9ptm1x07nfm  # should succeed
+DISPLAY  # should always succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg 4q99cd6s7eaj636q  # should succeed
+DISPLAY  # should always succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg ehehfag3y1kndtf5  # should succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg rvykwqksfyezk677  # should succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg i8qx1rm60lgh0dxz  # should succeed
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg xvbjg83qzkn0ata6  # should succeed
+LOOKUP 3t1vi84qmuternsc7gd8t1dj2rbr5epg  # should succeed and return xvbjg83qzkn0ata6
+LOOKUP 8efhlxjm2pza1q39pr2acuic39r7k8jc  # should fail
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg 3y6erwusaxg177d7  # should fail
+UPDATE w5a2e4di630p03v5i3923kqryf85sgk0 d6gw06j836uau659  # should fail
+LOOKUP 3t1vi84qmuternsc7gd8t1dj2rbr5epg  # should succeed and return xvbjg83qzkn0ata6
+LOOKUP 7281qj81s7k0xb3fhmflaimdk6uw02ra  # should fail
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg 9arajh2c65ipb8ml  # should fail
+UPDATE j8pmuqzidal92fdc9xkv774xq3z4vbdv bc44r0xbuh5u520v  # should fail
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg sh28krz9l65s46se  # should fail
+DISPLAY  # should always succeed
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf qb0uuorkxwmdndkn  # should succeed
+LOOKUP ou6i2ungrvdc7k1jxzegi40q0x9u5xb0  # should fail
+LOOKUP 3t1vi84qmuternsc7gd8t1dj2rbr5epg  # should succeed and return xvbjg83qzkn0ata6
+LOOKUP sy5ozyb004pea819operlrh9qlt75um8  # should fail
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf 74rv9teru3mryxks  # should fail
+DISPLAY  # should always succeed
+LOOKUP zt9nsam9fi79l1en3g01nl74qj57lp0m  # should fail
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg c3yhohugza2t81og  # should succeed
+DISPLAY  # should always succeed
+LOOKUP 3t1vi84qmuternsc7gd8t1dj2rbr5epg  # should succeed and return c3yhohugza2t81og
+UPDATE z6y3f7xjcet7c4341idrv0wfufbsc8vk 751eaoom8taiyd56  # should fail
+UPDATE 3t1vi84qmuternsc7gd8t1dj2rbr5epg 5rpf0x0be36tgml1  # should succeed
+DISPLAY  # should always succeed
+DISPLAY  # should always succeed
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf zz09tgtwjyzi8b56  # should fail
+LOOKUP uz5izzwnr40anbt6moth1nkdnzldzasp  # should fail
+DISPLAY  # should always succeed
+LOOKUP satnl3qi7tmf2dw24ithnqgzn4tax2pf  # should succeed and return qb0uuorkxwmdndkn
+DISPLAY  # should always succeed
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf ucvmxdke9j3btfyi  # should fail
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg 0xwhuez0x1tkn7gt  # should fail
+LOOKUP satnl3qi7tmf2dw24ithnqgzn4tax2pf  # should succeed and return qb0uuorkxwmdndkn
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf juyalpfhuficx8h1  # should fail
+INSERT satnl3qi7tmf2dw24ithnqgzn4tax2pf 8j1lejv7mnxup806  # should fail
+INSERT 6jlzos45zl9t7opdoo3adr0hflk7pdsx 5u8kan5xz9262895  # should succeed
+DISPLAY  # should always succeed
+DISPLAY  # should always succeed
+INSERT 6qqvjckhsygp7teg1tt2j3lpr6ot67qd 1uq23af5twzplxa0  # should succeed
+UPDATE gl2cas75jz7l1ejah90x1a0qi4j1ldku g2lq62yhxvzacaxp  # should fail
+INSERT vi9u3mmzs0qhixoxnhzj8mzdq3o3n0sy 6vp79ct9wifx6qas  # should succeed
+INSERT 3t1vi84qmuternsc7gd8t1dj2rbr5epg gt9r8apg4usc55v4  # should fail
+DISPLAY  # should always succeed
+INSERT 6qqvjckhsygp7teg1tt2j3lpr6ot67qd yv7ohxwip3uawdm3  # should fail
+DEINIT

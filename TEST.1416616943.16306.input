@@ -1,0 +1,6 @@
+INIT 1 4
+UPDATE u 2thy  # should fail
+LOOKUP w  # should fail
+UPDATE 2 t5st  # should fail
+UPDATE 2 lq1k  # should fail
+DEINIT
