@@ -255,6 +255,59 @@ ERROR_T BTreeIndex::LookupOrUpdateInternal(const SIZE_T &node,
   return ERROR_INSANE;
 }
 
+ERROR_T BTreeIndex::InsertInternal(const SIZE_T &node,
+             const BTreeOp op,
+             const KEY_T &key,
+             VALUE_T &value)
+{
+  BTreeNode b;
+  ERROR_T rc;
+  SIZE_T offset;
+  KEY_T testkey;
+  SIZE_T ptr;
+
+  rc = b.Unserialize(buffercache, node);
+
+  if (rc != ERROR_NOERROR) {
+    return rc;
+  }
+
+  switch (b.info.nodetype) {
+    case BTREE_ROOT_NODE:
+      //If we hit the empty root, make it a leaf so we can insert into it
+      if (b.info.numkeys == 0) {
+        SIZE_T leaf;
+        rc = AllocateNode(leaf);
+        if (rc) { return rc; }
+        b.info.nodetype = BTREE_LEAF_NODE;
+        superblock.info.rootnode = leaf;
+        b.Serialize(buffercache, leaf);
+        return InsertInternal(leaf, op, key, value);
+      }
+      break;
+    case BTREE_INTERIOR_NODE:
+      for (offset = 0; offset < b.info.numkeys; offset++) {
+        rc = b.GetKey(offset, testkey);
+        if (rc) { return rc; }
+
+        if (key < testkey) {
+          rc = b.GetPtr(offset, ptr);
+          if (rc) { return rc; }
+          return InsertInternal(ptr, op, key, value);
+        }
+      }
+
+      if (b.info.numkeys > 0) {
+        rc = b.GetPtr(b.info.numkeys, ptr);
+        if (rc) { return rc; }
+        return InsertInternal(ptr, op, key, value);
+      } else {
+        return ERROR_NONEXISTENT;
+      }
+      break;
+    case BTREE_LEAF_NODE:
+  }
+}
 
 static ERROR_T PrintNode(ostream &os, SIZE_T nodenum, BTreeNode &b, BTreeDisplayType dt)
 {
@@ -361,8 +414,7 @@ ERROR_T BTreeIndex::Insert(const KEY_T &key, const VALUE_T &value)
   
 ERROR_T BTreeIndex::Update(const KEY_T &key, const VALUE_T &value)
 {
-  // WRITE ME
-  return ERROR_UNIMPL;
+  return LookupOrUpdateInternal(superlblock.info.rootnode, BTREE_OP_UPDATE, key, value);
 }
 
   
@@ -464,7 +516,7 @@ ERROR_T BTreeIndex::SanityCheck() const
 
 ostream & BTreeIndex::Print(ostream &os) const
 {
-  // WRITE ME
+  Display(os, BTREE_SORTED_KEYVAL);
   return os;
 }
 
