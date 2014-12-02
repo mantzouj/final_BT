@@ -238,9 +238,13 @@ ERROR_T BTreeIndex::LookupOrUpdateInternal(const SIZE_T &node,
 	if (op==BTREE_OP_LOOKUP) { 
 	  return b.GetVal(offset,value);
 	} else { 
+	  ERROR_T rc = b.SetVal(offset, value);
+	  if (rc) { return rc; }
+       return b.Serialize(buffercache, node);
+	  
 	  // BTREE_OP_UPDATE
 	  // WRITE ME
-	  return ERROR_UNIMPL;
+	  //return ERROR_UNIMPL;
 	}
       }
     }
